@@ -1,0 +1,16 @@
+
+<div class="col-sm-8 col-sm-offset-2">
+    <h3>Nouveau Post :</h3>
+    <form [formGroup]="postForm" (ngSubmit)="onSavePost()">
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" id="title" class="form-control" formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="content">Contenu</label>
+        <input type="text" id="content" class="form-control" formControlName="content">
+      </div>
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>  
+    <p class="p-info-new-post" *ngIf="formStatus === 'disabled'">Il faut remplir le formulaire avant de valider !</p>
+  </div>

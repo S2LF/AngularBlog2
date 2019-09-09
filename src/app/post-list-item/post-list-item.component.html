@@ -1,0 +1,29 @@
+<li [ngClass]="{'list-group-item': true,
+        'list-group-item-success': loveIts > 0,
+        'list-group-item-danger': loveIts < 0}">
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-8">
+            <h4 >{{ title }}</h4>
+        </div>
+        <div class="col-4 text-right">
+            <h5>{{ createdAt | date: 'd/MM/y, h:mm a' | uppercase }}</h5>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-12">
+              <p class="text-justify">{{ content }}</p>
+              <p>
+                <button class="btn btn-success" (click)="onLike()">Love It</button>
+                &nbsp;
+                <button class="btn btn-danger" (click)="onDislike()">Don't Love It</button>
+                <strong [ngClass]="{'ml-3': true,
+                                    'text-success': loveIts > 0,
+                                    'text-danger': loveIts < 0}">{{ loveIts }} love(s)</strong>
+                <button class="btn btn-primary float-right" (click)="onDeletePost()"> Supprimer </button>
+              </p>
+          </div>
+      </div>
+  </div>
+</li>
